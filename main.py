@@ -26,18 +26,22 @@ from CrackVerifyCode import crack
 from GetConfig import config
 from GetPageDetail import page_detail
 from userinput import get_uesr_inpt
+import warnings
+
+warnings.filterwarnings("ignore")
+
 
 HEADER = config.crawl_headers
 # 获取cookie
-BASIC_URL = 'http://kns.cnki.net/kns/brief/result.aspx'
+BASIC_URL = 'https://kns.cnki.net/kns/brief/result.aspx'
 # 利用post请求先行注册一次
-SEARCH_HANDLE_URL = 'http://kns.cnki.net/kns/request/SearchHandler.ashx'
+SEARCH_HANDLE_URL = 'https://kns.cnki.net/kns/request/SearchHandler.ashx'
 # 发送get请求获得文献资源
-GET_PAGE_URL = 'http://kns.cnki.net/kns/brief/brief.aspx?pagename='
+GET_PAGE_URL = 'https://kns.cnki.net/kns/brief/brief.aspx?pagename='
 # 下载的基础链接
-DOWNLOAD_URL = 'http://kns.cnki.net/kns/'
+DOWNLOAD_URL = 'https://kns.cnki.net/kns/'
 # 切换页面基础链接
-CHANGE_PAGE_URL = 'http://kns.cnki.net/kns/brief/brief.aspx'
+CHANGE_PAGE_URL = 'https://kns.cnki.net/kns/brief/brief.aspx'
 
 
 class SearchTools(object):

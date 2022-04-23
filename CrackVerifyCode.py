@@ -34,7 +34,7 @@ class CrackCode(object):
         self.current_url = re.search(r'(.*?)#', current_url).group(1)
         self.re_current_url = re.search(r'.net(.*)', self.current_url).group(1)
         # 下载图片
-        img_url = 'http://kns.cnki.net' + img_url
+        img_url = 'https://kns.cnki.net' + img_url
         image_res = self.session.get(img_url, headers=self.header)
         with open('data/crack_code.jpeg', 'wb') as file:
             file.write(image_res.content)
@@ -81,7 +81,7 @@ class CrackCode(object):
         re_url = re.sub(r'%2F', '%2f', re_url)
         re_url = re.sub(r'%3F', '%3f', re_url)
         re_url = re.sub(r'%3D', '%3d', re_url)
-        send_url = 'http://kns.cnki.net/kns/brief/vericode.aspx?rurl=' + re_url + '&vericode=' + code
+        send_url = 'https://kns.cnki.net/kns/brief/vericode.aspx?rurl=' + re_url + '&vericode=' + code
         self.header['Referer'] = send_url
         self.header['Upgrade-Insecure-Requests'] = '1'
         return self.session.get(send_url, headers=self.header).text

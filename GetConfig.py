@@ -17,7 +17,7 @@ import configparser
 class LazyProperty(object):
     """
     LazyProperty
-    explain: http://www.spiderpy.cn/blog/5/
+    explain: https://www.spiderpy.cn/blog/5/
     """
 
     def __init__(self, func):
